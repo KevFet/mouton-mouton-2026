@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/hooks/useLanguage';
 import RulesModal from '@/components/RulesModal';
-import { HelpCircle, ChevronRight, Globe2 } from 'lucide-react';
+import { HelpCircle, ChevronRight, Globe2, LayoutGrid } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 export default function LandingPage() {
@@ -119,6 +119,14 @@ export default function LandingPage() {
 
       {/* Utilities Toolbar */}
       <div className="fixed bottom-10 left-1/2 -translate-x-1/2 glass flex items-center p-2 rounded-full border-white/10 gap-2">
+        <button
+          onClick={() => window.location.href = 'https://games-platform-hub.vercel.app/'}
+          className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+          title="Retour au menu"
+        >
+          <LayoutGrid size={24} />
+        </button>
+        <div className="w-[1px] h-6 bg-white/10" />
         <button
           onClick={() => setIsRulesOpen(true)}
           className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
